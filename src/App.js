@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 //common
 import Footer from './components/common/Footer';
@@ -14,15 +14,31 @@ import Department from './components/sub/Department';
 import Gallery from './components/sub/Gallery';
 import Member from './components/sub/Member';
 import Youtube from './components/sub/Youtube';
+import Banner from './components/main/Banner';
+import News from './components/main/News';
+import Pics from './components/main/Pics';
+import Vids from './components/main/Vids';
+
+import './scss/style.scss';
 
 function App() {
 	return (
 		<>
-			<Header />
+			<Switch>
+				<Route exact path='/'>
+					<Header type={'main'} />
 
-			<Route exact path='/'>
-				<Visual />
-			</Route>
+					<Visual />
+					<News />
+					<Pics />
+					<Vids />
+					<Banner />
+				</Route>
+
+				<Route path='/'>
+					<Header type={'sub'} />
+				</Route>
+			</Switch>
 
 			<Route path='/department'>
 				<Department />
