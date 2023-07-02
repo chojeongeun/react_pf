@@ -5,5 +5,23 @@
 			height: 400px;
 			background: #333;
 		}
+		#formBox {
+			margin: 20px 0px;
+			form {
+				label {
+					margin-right: 5px;
+				}
+				input {
+					margin-right: 30px;
+				}
+				textarea {
+					margin-right: 30px;
+				}
+			}
+			p {
+				margin-top: 20px;
+				color: #555;
+			}
+		}
 	}
 }
