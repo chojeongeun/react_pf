@@ -5,41 +5,44 @@ import { Link, NavLink } from 'react-router-dom';
 function Header({ type }) {
 	const active = 'on';
 	return (
-		// props로 전달되는 type값을 header의 class명으로 지정해서 스타일 분기처리
 		<header className={type}>
 			<h1>
-				<Link to='/'>LOGO</Link>
+				<Link to='/'>
+					POPULAR
+					<br />
+					SCIENCE
+				</Link>
 			</h1>
 
 			<ul id='gnb'>
 				<li>
 					<NavLink to='/department' activeClassName={active}>
-						Department
+						DEPARTMENT
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to='/community' activeClassName={active}>
-						Community
+						COMMUNITY
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to='/gallery' activeClassName={active}>
-						Gallery
+						GALLERY
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to='/youtube' activeClassName={active}>
-						Youtube
+						YOUTUBE
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to='/contact' activeClassName={active}>
-						Contact
+						CONTACT
 					</NavLink>
 				</li>
 				<li>
 					<NavLink to='/member' activeClassName={active}>
-						Member
+						MEMBER
 					</NavLink>
 				</li>
 			</ul>

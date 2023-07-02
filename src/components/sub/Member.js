@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 
 function Member() {
-	return <Layout name={'Member'}>Member</Layout>;
+	return <Layout name={'MEMBER'}>Member</Layout>;
 }
 
 export default Member;

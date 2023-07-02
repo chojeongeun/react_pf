@@ -9,7 +9,8 @@ header {
 
 	h1 {
 		a {
-			font: bold 24px/1 'arial';
+			font: bold 25px/1 'jost';
+			letter-spacing: 1px;
 			color: #333;
 		}
 	}
@@ -20,8 +21,10 @@ header {
 
 		li {
 			a {
-				font: 15px/1 'arial';
+				font: 15px/1 'jost';
+				font-weight: bold;
 				color: #777;
+				letter-spacing: 1px;
 
 				&.on {
 					color: #000;

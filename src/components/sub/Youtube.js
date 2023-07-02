@@ -9,8 +9,8 @@ function Youtube() {
 	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
-		const key = 'AIzaSyCF8SOz4Cchg53VOMXZe0un2AC7zEP2apU';
-		const list = 'PLHtvRFLN5v-W5bQjvyH8QTdQQhgflJ3nu';
+		const key = 'AIzaSyAzkLv4Fcv1UNbOrmEVhonD6YXHhLjwsC8';
+		const list = 'PLWvS8-RhJ_PKwK6LI-fBPArE2muxoT1Qc';
 		const num = 10;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
 
