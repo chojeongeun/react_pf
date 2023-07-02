@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -12,7 +16,7 @@ function Department() {
 		});
 	}, []);
 	return (
-		<Layout name={'Department'}>
+		<Layout name={'DEPARTMENT'}>
 			{Members.map((member, idx) => {
 				return (
 					<article key={idx}>
@@ -21,6 +25,11 @@ function Department() {
 						</div>
 						<h2>{member.name}</h2>
 						<p>{member.position}</p>
+						<div className='icon'>
+							<FontAwesomeIcon icon={faPhone} />
+							<FontAwesomeIcon icon={faEnvelope} />
+							<FontAwesomeIcon icon={faUser} />
+						</div>
 					</article>
 				);
 			})}

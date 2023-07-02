@@ -21,13 +21,10 @@ function Youtube() {
 	}, []);
 	return (
 		<>
-			<Layout name={'Youtube'}>
+			<Layout name={'YOUTUBE'}>
 				{Vids.map((vid, idx) => {
 					return (
 						<article key={idx}>
-							<h2>{vid.snippet.title.length > 50 ? vid.snippet.title.substr(0, 50) + '...' : vid.snippet.title}</h2>
-							<p>{vid.snippet.description.length > 200 ? vid.snippet.description.substr(0, 200) + '...' : vid.snippet.description}</p>
-							<span>{vid.snippet.publishedAt.split('T')[0].split('-').join('.')}</span>
 							<div
 								className='pic'
 								onClick={() => {
@@ -36,6 +33,12 @@ function Youtube() {
 								}}
 							>
 								<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
+							</div>
+							<div className='boxTxt'>
+								<h2>{vid.snippet.title.length > 50 ? vid.snippet.title.substr(0, 50) + '...' : vid.snippet.title}</h2>
+
+								<p>{vid.snippet.description.length > 200 ? vid.snippet.description.substr(0, 200) + '...' : vid.snippet.description}</p>
+								<span>{vid.snippet.publishedAt.split('T')[0].split('-').join('.')}</span>
 							</div>
 						</article>
 					);

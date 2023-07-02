@@ -46,7 +46,7 @@ function Contact() {
 		marker.setMap(mapInstance);
 	}, []);
 	return (
-		<Layout name={'Contact'}>
+		<Layout name={'CONTACT'}>
 			<div id='map' ref={container}></div>
 			<div id='formBox'>
 				<form ref={form} onSubmit={sendEmail}>
