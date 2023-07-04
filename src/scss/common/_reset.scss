@@ -11,3 +11,19 @@ li {
 a {
 	text-decoration: none;
 }
+
+fieldset {
+	border: none;
+}
+table {
+	border-collapse: collapse;
+}
+.h {
+	position: absolute;
+	top: -999999px;
+	opacity: 0;
+}
+
+body {
+	background: #efefef;
+}
