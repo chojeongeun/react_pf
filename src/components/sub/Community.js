@@ -1,11 +1,26 @@
 import Layout from '../common/Layout';
 import { useRef, useState, useEffect } from 'react';
 function Community() {
+	//로컬저장소 데이터 반환함수
+	const getLocalData = () => {
+		const dummy = [
+			{ title: 'Hello6', content: 'Here comes description in detail.' },
+			{ title: 'Hello5', content: 'Here comes description in detail.' },
+			{ title: 'Hello4', content: 'Here comes description in detail.' },
+			{ title: 'Hello3', content: 'Here comes description in detail.' },
+			{ title: 'Hello2', content: 'Here comes description in detail.' },
+			{ title: 'Hello1', content: 'Here comes description in detail.' },
+		];
+		const data = localStorage.getItem('post');
+		if (data) return JSON.parse(data);
+		else return dummy;
+	};
+
 	const input = useRef(null);
 	const textarea = useRef(null);
 	const editInput = useRef(null);
 	const editTextarea = useRef(null);
-	const [Posts, setPosts] = useState([]);
+	const [Posts, setPosts] = useState(getLocalData());
 	const [Allowed, setAllowed] = useState(true);
 	const resetForm = () => {
 		input.current.value = '';
@@ -58,10 +73,11 @@ function Community() {
 				return post;
 			})
 		);
+		setAllowed(true);
 	};
 
 	useEffect(() => {
-		console.log(Posts);
+		localStorage.setItem('post', JSON.stringify(Posts));
 	}, [Posts]);
 	return (
 		<Layout name={'COMMUNITY'}>
