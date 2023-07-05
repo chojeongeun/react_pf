@@ -24,7 +24,7 @@ function Gallery() {
 		setItems(result.data.photos.photo);
 	};
 
-	useEffect(() => getFlickr({ type: 'interest' }), []);
+	useEffect(() => getFlickr({ type: 'user', user: '198489373@N07' }), []);
 
 	return (
 		<Layout name={'GALLERY'}>
