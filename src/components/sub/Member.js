@@ -9,8 +9,8 @@ function Member() {
 		pwd1: '',
 		pwd2: '',
 		email: '',
-		gender: false,
-		interests: false,
+		gender: '',
+		interests: [],
 		edu: '',
 		comments: '',
 	};
@@ -24,16 +24,19 @@ function Member() {
 		setVal({ ...Val, [name]: value });
 	};
 	const handleRadio = (e) => {
-		const { name, checked } = e.target;
-		setVal({ ...Val, [name]: checked });
+		const { name, value } = e.target;
+		setVal({ ...Val, [name]: value });
 	};
 	const handleCheck = (e) => {
 		const { name } = e.target;
-		let isChecked = false;
 		const inputs = e.target.parentElement.querySelectorAll('input');
+
 		//모든 체크박스를 반복돌면서 하나라도 체크되어 있는게 있으면 true값 반환
-		inputs.forEach((el) => el.checked && (isChecked = true));
-		setVal({ ...Val, [name]: isChecked });
+		let checkArr = [];
+		inputs.forEach((el) => {
+			if (el.checked) checkArr.push(el.value);
+		});
+		setVal({ ...Val, [name]: checkArr });
 	};
 
 	const handleSelect = (e) => {
@@ -71,10 +74,10 @@ function Member() {
 		if (value.email.length < 8 || !/@/.test(value.email)) {
 			errs.email = '이메일주소는 8글자 이상 @를 포함하세요.';
 		}
-		if (!value.gender) {
+		if (!value === '') {
 			errs.gender = '성별을 체크해주세요.';
 		}
-		if (!value.interests) {
+		if (!value.interests.length === 0) {
 			errs.interests = '관심사를 하나 이상 체크하세요.';
 		}
 		if (value.edu === '') {
@@ -87,14 +90,17 @@ function Member() {
 	};
 
 	useEffect(() => {
-		//객체의 키값을 배열로 반환한다음 해당 배열의 갯수를 저장
-		//len값이 0이면 Err객체에 에러메시지가 하나도 없어서 인증통과 처리
 		const len = Object.keys(Err).length;
 		if (len === 0 && Submit) {
 			alert('모든 인증을 통과했습니다.');
 			history.push('/');
 		}
 	}, [Err]);
+
+	useEffect(() => {
+		console.log(Val);
+	}, [Val]);
+
 	return (
 		<Layout name={'MEMBER'}>
 			<button onClick={() => history.goBack()}>뒤로 가기</button>
@@ -230,6 +236,7 @@ function Member() {
 										rows='3'
 										value={Val.comments}
 										onChange={handleChange}
+										placeholder='남기는 말을 입력하세요.'
 									></textarea>
 									<br />
 									{Err.comments && <p>{Err.comments}</p>}

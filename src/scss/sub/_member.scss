@@ -1,5 +1,8 @@
 .MEMBER {
 	> .inner {
+		button {
+			margin-bottom: 10px;
+		}
 		table {
 			width: 100%;
 			border: none;
@@ -45,6 +48,7 @@
 					padding: 6px 10px;
 					background: #eff8f8;
 					resize: none;
+					font-family: '돋움';
 				}
 
 				input[type='radio'],
@@ -57,6 +61,48 @@
 					font: 11px/1 '돋움';
 					color: hotpink;
 					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.MEMBER {
+		> .inner {
+			table {
+				th {
+					display: none;
+					padding: 15px 0px;
+
+					&:last-child {
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+
+						input[type='reset'],
+						input[type='submit'] {
+							display: inline-block;
+							width: 48%;
+							margin: 0px;
+						}
+					}
+				}
+				td {
+					width: 100%;
+					border-left: none;
+					padding: 15px 0px;
+
+					input[type='text'],
+					input[type='password'],
+					select,
+					textarea {
+						width: 100%;
+					}
+					input[type='radio'],
+					input[type='checkbox'] {
+						margin-right: 10px;
+					}
 				}
 			}
 		}
