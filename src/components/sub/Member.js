@@ -104,9 +104,25 @@ function Member() {
 	return (
 		<Layout name={'MEMBER'}>
 			<button onClick={() => history.goBack()}>뒤로 가기</button>
+			<ul className='join'>
+				<li>01 약관동의</li>
+				<li>02 정보입력</li>
+				<li>03 가입완료</li>
+			</ul>
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
+					<h2>회원약관 동의</h2>
+					<div className='agreement'>
+						<textarea>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi suscipit assumenda consectetur mollitia dolores nisi possimus impedit facilis explicabo vitae quae architecto corrupti
+							deserunt, aperiam, non minima aliquid molestias vel necessitatibus quidem obcaecati. Sapiente accusamus nobis neque accusantium deleniti culpa, molestias possimus ea dicta vitae
+							obcaecati libero nihil cumque modi.
+						</textarea>
+						<input type='checkbox' id='terms' name='terms' />
+						<label for='terms'>모든 약관을 확인하고 동의합니다.</label>
+					</div>
+
 					<table>
 						<tbody>
 							{/* user id */}
@@ -115,14 +131,7 @@ function Member() {
 									<label htmlFor='userid'>USER ID</label>
 								</th>
 								<td>
-									<input
-										type='text'
-										name='userid'
-										id='userid'
-										placeholder='아이디를 입력하세요'
-										onChange={handleChange}
-										value={Val.userid}
-									/>
+									<input type='text' name='userid' id='userid' placeholder='아이디를 입력하세요' onChange={handleChange} value={Val.userid} />
 									<br />
 									{Err.userid && <p>{Err.userid}</p>}
 								</td>
@@ -133,14 +142,7 @@ function Member() {
 									<label htmlFor='pwd1'>PASSWORD</label>
 								</th>
 								<td>
-									<input
-										type='password'
-										name='pwd1'
-										id='pwd1'
-										placeholder='비밀번호를 입력하세요'
-										onChange={handleChange}
-										value={Val.pwd1}
-									/>
+									<input type='password' name='pwd1' id='pwd1' placeholder='비밀번호를 입력하세요' onChange={handleChange} value={Val.pwd1} />
 									<br />
 									{Err.pwd1 && <p>{Err.pwd1}</p>}
 								</td>
@@ -151,14 +153,7 @@ function Member() {
 									<label htmlFor='pwd2'>RE-PASSWORD</label>
 								</th>
 								<td>
-									<input
-										type='password'
-										name='pwd2'
-										id='pwd2'
-										placeholder='비밀번호를 재입력하세요'
-										onChange={handleChange}
-										value={Val.pwd2}
-									/>
+									<input type='password' name='pwd2' id='pwd2' placeholder='비밀번호를 재입력하세요' onChange={handleChange} value={Val.pwd2} />
 									<br />
 									{Err.pwd2 && <p>{Err.pwd2}</p>}
 								</td>
@@ -169,14 +164,7 @@ function Member() {
 									<label htmlFor='email'>E-MAIL</label>
 								</th>
 								<td>
-									<input
-										type='text'
-										name='email'
-										id='email'
-										placeholder='이메일주소를 입력하세요'
-										onChange={handleChange}
-										value={Val.email}
-									/>
+									<input type='text' name='email' id='email' placeholder='이메일주소를 입력하세요' onChange={handleChange} value={Val.email} />
 									<br />
 									{Err.email && <p>{Err.email}</p>}
 								</td>
@@ -229,15 +217,7 @@ function Member() {
 									<label htmlFor='comments'>Leave Message</label>
 								</th>
 								<td>
-									<textarea
-										name='comments'
-										id='comments'
-										cols='30'
-										rows='3'
-										value={Val.comments}
-										onChange={handleChange}
-										placeholder='남기는 말을 입력하세요.'
-									></textarea>
+									<textarea name='comments' id='comments' cols='30' rows='3' value={Val.comments} onChange={handleChange} placeholder='남기는 말을 입력하세요.'></textarea>
 									<br />
 									{Err.comments && <p>{Err.comments}</p>}
 								</td>

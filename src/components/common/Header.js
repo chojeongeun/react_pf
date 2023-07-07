@@ -1,4 +1,4 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ function Header({ type }) {
 				</Link>
 			</h1>
 
-			<ul id='gnb'>
+			<ul id='gnb1'>
 				<li>
 					<NavLink to='/department' activeClassName={active}>
 						DEPARTMENT
@@ -30,6 +30,9 @@ function Header({ type }) {
 						GALLERY
 					</NavLink>
 				</li>
+			</ul>
+
+			<ul id='gnb2'>
 				<li>
 					<NavLink to='/youtube' activeClassName={active}>
 						YOUTUBE
@@ -47,6 +50,16 @@ function Header({ type }) {
 				</li>
 			</ul>
 
+			<ul id='util'>
+				<li>
+					<NavLink to='/'>LOG IN</NavLink>
+				</li>
+				<li>
+					<NavLink to='/'>
+						<FontAwesomeIcon icon={faMagnifyingGlass} />
+					</NavLink>
+				</li>
+			</ul>
 			<FontAwesomeIcon icon={faBars} />
 		</header>
 	);

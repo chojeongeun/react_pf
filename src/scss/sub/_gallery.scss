@@ -1,13 +1,16 @@
 .GALLERY {
+	background-color: rgb(229, 229, 229);
 	.frame {
+		margin-top: 70px;
 		&::after {
 			content: '';
 			display: block;
 			clear: both;
 		}
 		article {
-			width: 25%;
-			padding: 10px;
+			width: calc(100% / 3);
+			height: 500px;
+			padding: 40px;
 			float: left;
 
 			.inner {

@@ -1,5 +1,6 @@
 .DEPARTMENT {
-	> .inner {
+	.inner {
+		width: 100%;
 		margin: 0px auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -11,6 +12,7 @@
 			float: left;
 			padding: 50px;
 			margin-bottom: 40px;
+			margin-top: 70px;
 
 			.pic {
 				width: 200px;
@@ -53,28 +55,28 @@
 			}
 		}
 	}
-	// @media screen and (max-width: $tablet) {
-	// 	.Department {
-	// 		> .inner {
-	// 			article {
-	// 				width: 45%;
-	// 				.pic {
-	// 					height: 30vw;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// @media screen and (max-width: $mobile) {
-	// 	.Department {
-	// 		> .inner {
-	// 			article {
-	// 				width: 100%;
-	// 				.pic {
-	// 					height: 50vw;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
+// @media screen and (max-width: $tablet) {
+// 	.Department {
+// 		> .inner {
+// 			article {
+// 				width: 45%;
+// 				.pic {
+// 					height: 30vw;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media screen and (max-width: $mobile) {
+// 	.Department {
+// 		> .inner {
+// 			article {
+// 				width: 100%;
+// 				.pic {
+// 					height: 50vw;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
