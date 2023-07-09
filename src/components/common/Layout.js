@@ -12,7 +12,7 @@ function Layout({ name, children }) {
 
 			<div className='inner'>
 				<h1>{name}</h1>
-				<p>The popular science magazine.</p>
+				<p className='innerP'>The popular science magazine.</p>
 				{children}
 			</div>
 		</section>
