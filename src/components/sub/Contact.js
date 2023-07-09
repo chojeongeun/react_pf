@@ -42,6 +42,7 @@ function Contact() {
 		const markerImage = new kakao.maps.MarkerImage(imgSrc, imgSize, imgPos);
 
 		const marker = new kakao.maps.Marker({ position: option.center, image: markerImage });
+		mapInstance.setZoomable(false);
 
 		marker.setMap(mapInstance);
 	}, []);

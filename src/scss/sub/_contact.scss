@@ -5,6 +5,12 @@
 			height: 400px;
 			background: #333;
 			margin-top: 70px;
+			filter: grayscale(100%);
+			transition: filter 0.5s;
+
+			&:hover {
+				filter: saturate(100%);
+			}
 		}
 		#formBox {
 			margin: 20px 0px;

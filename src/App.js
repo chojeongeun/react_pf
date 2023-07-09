@@ -17,7 +17,8 @@ import Youtube from './components/sub/Youtube';
 import Banner from './components/main/Banner';
 import News from './components/main/News';
 import Pics from './components/main/Pics';
-import Vids from './components/main/Vids';
+import Science from './components/main/Science';
+import Goods from './components/main/Goods';
 
 import './scss/style.scss';
 
@@ -31,8 +32,9 @@ function App() {
 					<Visual />
 					<News />
 					<Pics />
-					<Vids />
 					<Banner />
+					<Science />
+					<Goods />
 				</Route>
 
 				<Route path='/'>
