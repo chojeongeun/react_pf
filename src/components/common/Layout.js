@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
-function Layout({ name, children }) {
+import React from 'react';
+
+function Layout({ name, children, txt = 'Default' }) {
 	const frame = useRef(null);
 
 	useEffect(() => {

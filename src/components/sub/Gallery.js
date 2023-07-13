@@ -12,7 +12,7 @@ function Gallery() {
 		const method_interest = 'flickr.interestingness.getList';
 		const method_user = 'flickr.people.getPhotos';
 		const method_search = 'flick.photos.search';
-		const num = 500;
+		const num = 50;
 		let url = '';
 		if (opt.type === 'interest') url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
 		if (opt.type === 'search')
@@ -24,7 +24,8 @@ function Gallery() {
 		setItems(result.data.photos.photo);
 	};
 
-	useEffect(() => getFlickr({ type: 'user', user: '198489373@N07' }), []);
+	//useEffect(() => getFlickr({ type: 'user', user: '198489373@N07' }), []);
+	useEffect(() => getFlickr({ type: 'interest' }), []);
 
 	return (
 		<Layout name={'GALLERY'}>
