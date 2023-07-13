@@ -1,8 +1,13 @@
 import { Route, Switch } from 'react-router-dom';
+import { useRef } from 'react';
 
 //common
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
+import Menu from './components/common/Menu';
+
+//main
+import Main from './components/main/Main';
 
 //sub
 import Community from './components/sub/Community';
@@ -13,17 +18,17 @@ import Member from './components/sub/Member';
 import Youtube from './components/sub/Youtube';
 
 import './scss/style.scss';
-import Main from './components/main/Main';
 
 function App() {
+	const menu = useRef(null);
 	return (
 		<>
 			<Switch>
-				<Route exact path='/'>
+				<Route exact path='/' render={() => <Main menu={menu} />}>
 					<Main />
 				</Route>
 
-				<Route path='/'>
+				<Route path='/' render={() => <Header type={'sub'} menu={menu} />}>
 					<Header type={'sub'} />
 				</Route>
 			</Switch>
@@ -53,6 +58,7 @@ function App() {
 			</Route>
 
 			<Footer />
+			<Menu ref={menu} />
 		</>
 	);
 }
