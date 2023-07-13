@@ -60,7 +60,12 @@ function Gallery() {
 					</Masonry>
 				</div>
 			</Layout>
-			<Modal ref={openModal}></Modal>
+			<Modal ref={openModal}>
+				<img
+					src={`https://live.staticflickr.com/${Items[0]?.server}/${Items[0]?.id}_${Items[0]?.secret}_b.jpg`}
+					alt={Items[0]?.title}
+				/>
+			</Modal>
 		</>
 	);
 }
