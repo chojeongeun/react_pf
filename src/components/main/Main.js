@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../common/Header';
-import Visual from './components/main/Visual';
-import Banner from './components/main/Banner';
-import News from './components/main/News';
-import Pics from './components/main/Pics';
-import Science from './components/main/Science';
-import Goods from './components/main/Goods';
+import Visual from './Visual';
+import Banner from './Banner';
+import News from './News';
+import Pics from './Pics';
+import Science from './Science';
+import Goods from './Goods';
 
 function Main() {
 	return (
