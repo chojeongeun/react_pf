@@ -14,13 +14,11 @@ function Gallery() {
 		const method_interest = 'flickr.interestingness.getList';
 		const method_user = 'flickr.people.getPhotos';
 		const method_search = 'flick.photos.search';
-		const num = 50;
+		const num = 20;
 		let url = '';
 		if (opt.type === 'interest') url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
-		if (opt.type === 'search')
-			url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-		if (opt.type === 'user')
-			url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
+		if (opt.type === 'search') url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
+		if (opt.type === 'user') url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
 
 		const result = await axios.get(url);
 		setItems(result.data.photos.photo);
@@ -39,10 +37,7 @@ function Gallery() {
 								<article key={idx}>
 									<div className='inner'>
 										<div className='pic'>
-											<img
-												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-												alt={item.title}
-											/>
+											<img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />
 										</div>
 										<h2>{item.title}</h2>
 										<div className='profile'>
@@ -61,10 +56,7 @@ function Gallery() {
 				</div>
 			</Layout>
 			<Modal ref={openModal}>
-				<img
-					src={`https://live.staticflickr.com/${Items[0]?.server}/${Items[0]?.id}_${Items[0]?.secret}_b.jpg`}
-					alt={Items[0]?.title}
-				/>
+				<img src={`https://live.staticflickr.com/${Items[0]?.server}/${Items[0]?.id}_${Items[0]?.secret}_b.jpg`} alt={Items[0]?.title} />
 			</Modal>
 		</>
 	);
