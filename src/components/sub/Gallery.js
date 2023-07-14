@@ -36,7 +36,7 @@ function Gallery() {
 							return (
 								<article key={idx}>
 									<div className='inner'>
-										<div className='pic'>
+										<div className='pic' onClick={() => openModal.current.open()}>
 											<img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />
 										</div>
 										<h2>{item.title}</h2>
