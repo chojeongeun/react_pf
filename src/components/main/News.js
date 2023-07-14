@@ -2,7 +2,7 @@ import React from 'react';
 
 function News() {
 	return (
-		<section id='news'>
+		<section id='news' className='mySroll'>
 			<div className='inner'>
 				<h1>LATEST NEWS</h1>
 

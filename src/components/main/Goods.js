@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Goods() {
 	return (
-		<section id='goods'>
+		<section id='goods' className='myScroll'>
 			<div className='inner'>
 				<h1>GOODS</h1>
 				<ul>

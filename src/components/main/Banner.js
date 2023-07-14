@@ -1,6 +1,6 @@
 function Banner() {
 	return (
-		<section id='banner'>
+		<section id='banner' className='myScroll'>
 			<div class='inner'>
 				<p>Quite Autors/</p>
 				<div class='txtBN'>

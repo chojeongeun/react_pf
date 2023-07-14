@@ -2,7 +2,7 @@ import React from 'react';
 
 function Science() {
 	return (
-		<section id='science'>
+		<section id='science' className='myScroll'>
 			<div className='inner'>
 				<h1>SCIENCE</h1>
 				<div className='wrap'>

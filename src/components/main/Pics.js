@@ -1,6 +1,6 @@
 function Pics() {
 	return (
-		<section id='pics'>
+		<section id='pics' className='myScroll'>
 			<div className='inner'>
 				<h1>TOP IN THE COMMUNITY</h1>
 				<div className='wrap'>

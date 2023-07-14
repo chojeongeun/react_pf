@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Visual() {
 	return (
-		<figure id='visual'>
+		<figure id='visual' className='myScroll'>
 			<img src={`${process.env.PUBLIC_URL}/img/pic5.jpg`} alt='' />
 
 			<div className='visualInner'>

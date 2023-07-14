@@ -6,6 +6,7 @@ import News from './News';
 import Pics from './Pics';
 import Science from './Science';
 import Goods from './Goods';
+import Btns from './Btns';
 
 function Main({ menu }) {
 	return (
@@ -17,6 +18,7 @@ function Main({ menu }) {
 			<Banner />
 			<Science />
 			<Goods />
+			<Btns />
 		</main>
 	);
 }
