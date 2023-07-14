@@ -2,7 +2,6 @@ import { useRef, useEffect, useState } from 'react';
 import Anime from '../../asset/anime';
 
 function Btns() {
-	console.log('btn Called');
 	const btnRef = useRef(null);
 	const pos = useRef([]);
 	const [Num, setNum] = useState(0);
@@ -14,12 +13,32 @@ function Btns() {
 		setNum(pos.current.length);
 	};
 
+	const activation = () => {
+		const base = -window.innerHeight / 2;
+		const scroll = window.scrollY;
+		const btns = btnRef.current.children;
+		const boxs = btnRef.current.parentElement.querySelectorAll('.myScroll');
+
+		pos.current.forEach((pos, idx) => {
+			if (scroll >= pos + base) {
+				for (const btn of btns) btn.classList.remove('on');
+				for (const box of boxs) box.classList.remove('on');
+				btns[idx].classList.add('on');
+				boxs[idx].classList.add('on');
+			}
+		});
+	};
+
 	useEffect(() => {
 		getPos();
 		window.addEventListener('resize', getPos);
+		window.addEventListener('scroll', activation);
+		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 
 		return () => {
 			window.removeEventListener('resize', getPos);
+			window.removeEventListener('scroll', activation);
+			window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 		};
 	}, []);
 
