@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 
 function Contact() {
 	const container = useRef(null);
+	const [Traffic, setTraffic] = useState(false);
 	const form = useRef(null);
 	const inputName = useRef(null);
 	const inputEmail = useRef(null);
@@ -45,10 +46,14 @@ function Contact() {
 		mapInstance.setZoomable(false);
 
 		marker.setMap(mapInstance);
-	}, []);
+
+		Traffic ? mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC) : mapInstance.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+	}, [Traffic]);
+
 	return (
 		<Layout name={'CONTACT'}>
 			<div id='map' ref={container}></div>
+			<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
 			<div id='formBox'>
 				<form ref={form} onSubmit={sendEmail}>
 					<label>Name</label>
