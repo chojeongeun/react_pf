@@ -24,38 +24,21 @@ function App() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' render={() => <Main menu={menu} />}>
-					<Main />
-				</Route>
-
-				<Route path='/' render={() => <Header type={'sub'} menu={menu} />}>
-					<Header type={'sub'} />
-				</Route>
+				<Route exact path='/' render={() => <Main menu={menu} />} />
+				<Route path='/' render={() => <Header type={'sub'} menu={menu} />} />
 			</Switch>
 
-			<Route path='/department'>
-				<Department />
-			</Route>
+			<Route path='/department' component={Department}></Route>
 
-			<Route path='/community'>
-				<Community />
-			</Route>
+			<Route path='/community' component={Community}></Route>
 
-			<Route path='/gallery'>
-				<Gallery />
-			</Route>
+			<Route path='/gallery' component={Gallery}></Route>
 
-			<Route path='/youtube'>
-				<Youtube />
-			</Route>
+			<Route path='/youtube' component={Youtube}></Route>
 
-			<Route path='/contact'>
-				<Contact />
-			</Route>
+			<Route path='/contact' component={Contact}></Route>
 
-			<Route path='/member'>
-				<Member />
-			</Route>
+			<Route path='/member' component={Member}></Route>
 
 			<Footer />
 			<Menu ref={menu} />

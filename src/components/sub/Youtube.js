@@ -8,17 +8,17 @@ function Youtube() {
 	const [Vids, setVids] = useState([]);
 	const [Index, setIndex] = useState(0);
 
-	useEffect(() => {
+	const fetchYoutube = async () => {
 		const key = 'AIzaSyAzkLv4Fcv1UNbOrmEVhonD6YXHhLjwsC8';
 		const list = 'PLWvS8-RhJ_PKwK6LI-fBPArE2muxoT1Qc';
 		const num = 10;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
+		const result = await axios.get(url);
+		setVids(result.data.items);
+	};
 
-		axios.get(url).then((data) => {
-			console.log(data.data.items);
-			setVids(data.data.items);
-		});
-	}, []);
+	useEffect(() => fetchYoutube(), []);
+
 	return (
 		<>
 			<Layout name={'YOUTUBE'}>
@@ -44,6 +44,7 @@ function Youtube() {
 					);
 				})}
 			</Layout>
+
 			<Modal ref={modal}>
 				<iframe title={Vids[Index]?.id} src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`} frameborder='0'></iframe>
 			</Modal>

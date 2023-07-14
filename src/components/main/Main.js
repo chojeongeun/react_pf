@@ -7,10 +7,10 @@ import Pics from './Pics';
 import Science from './Science';
 import Goods from './Goods';
 
-function Main() {
+function Main({ menu }) {
 	return (
 		<main>
-			<Header type={'main'} />
+			<Header type={'main'} menu={menu} />
 			<Visual />
 			<News />
 			<Pics />
