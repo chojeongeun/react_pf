@@ -7,6 +7,7 @@ import Modal from '../common/Modal';
 function Gallery() {
 	const [Items, setItems] = useState([]);
 	const openModal = useRef(null);
+	const [Index, setIndex] = useState(0);
 
 	const getFlickr = async (opt) => {
 		const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
@@ -17,15 +18,17 @@ function Gallery() {
 		const num = 20;
 		let url = '';
 		if (opt.type === 'interest') url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
-		if (opt.type === 'search') url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-		if (opt.type === 'user') url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
+		if (opt.type === 'search')
+			url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
+		if (opt.type === 'user')
+			url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
 
 		const result = await axios.get(url);
 		setItems(result.data.photos.photo);
 	};
 
-	//useEffect(() => getFlickr({ type: 'user', user: '198489373@N07' }), []);
-	useEffect(() => getFlickr({ type: 'interest' }), []);
+	useEffect(() => getFlickr({ type: 'user', user: '198489373@N07' }), []);
+	//useEffect(() => getFlickr({ type: 'interest' }), []);
 
 	return (
 		<>
@@ -36,8 +39,17 @@ function Gallery() {
 							return (
 								<article key={idx}>
 									<div className='inner'>
-										<div className='pic' onClick={() => openModal.current.open()}>
-											<img src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`} alt={item.title} />
+										<div
+											className='pic'
+											onClick={() => {
+												openModal.current.open();
+												setIndex(idx);
+											}}
+										>
+											<img
+												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+												alt={item.title}
+											/>
 										</div>
 										<h2>{item.title}</h2>
 										<div className='profile'>
@@ -56,7 +68,10 @@ function Gallery() {
 				</div>
 			</Layout>
 			<Modal ref={openModal}>
-				<img src={`https://live.staticflickr.com/${Items[0]?.server}/${Items[0]?.id}_${Items[0]?.secret}_b.jpg`} alt={Items[0]?.title} />
+				<img
+					src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`}
+					alt={Items[Index]?.title}
+				/>
 			</Modal>
 		</>
 	);
