@@ -140,27 +140,133 @@
 	}
 }
 
-// @media screen and (max-width: $tablet) {
-// 	.Department {
-// 		> .inner {
-// 			article {
-// 				width: 45%;
-// 				.pic {
-// 					height: 30vw;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-// @media screen and (max-width: $mobile) {
-// 	.Department {
-// 		> .inner {
-// 			article {
-// 				width: 100%;
-// 				.pic {
-// 					height: 50vw;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+@media screen and (max-width: $tablet) {
+	.DEPARTMENT {
+		.inner {
+			#upper {
+				margin-bottom: 80px;
+
+				.aboutTxt {
+					> h2 {
+						font: bold 30px/1 'jost';
+						margin-bottom: 20px;
+					}
+					> p {
+						font: 13px/1.4 'poppins';
+					}
+				}
+			}
+
+			#middle {
+				margin-top: 80px;
+				margin-bottom: 100px;
+
+				.fa-heart,
+				.fa-laptop-code,
+				.fa-cloud-arrow-down {
+					font-size: 50px;
+					margin-bottom: 25px;
+				}
+				> h3 {
+					font: bold 20px/1 'jost';
+					margin-bottom: 15px;
+				}
+				> p {
+					font: 12px/1 'poppins';
+				}
+
+				> article {
+					margin-right: 10px;
+					padding: 15px;
+				}
+			}
+
+			#lower {
+				.wrap {
+					padding: 30px;
+
+					> article {
+						width: calc(100% / 2);
+						float: left;
+						padding: 30px;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.DEPARTMENT {
+		.inner {
+			#upper {
+				display: block;
+				gap: 0px;
+				margin-bottom: 50px;
+
+				.aboutTxt {
+					width: 100%;
+					margin-bottom: 30px;
+					> h2 {
+						font: bold 25px/1 'jost';
+						margin-bottom: 18px;
+					}
+					> p {
+						font: 13px/1.4 'poppins';
+					}
+				}
+				.pic {
+					width: 100%;
+					height: 170px;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						opacity: 0.8;
+					}
+				}
+			}
+
+			#middle {
+				display: block;
+				width: 100%;
+				margin-top: 60px;
+				margin-bottom: 100px;
+
+				.fa-heart,
+				.fa-laptop-code,
+				.fa-cloud-arrow-down {
+					font-size: 40px;
+					margin-bottom: 20px;
+				}
+				> h3 {
+					font: bold 20px/1 'jost';
+					margin-bottom: 15px;
+				}
+				> p {
+					font: 12px/1 'poppins';
+				}
+
+				> article {
+					width: 100%;
+					margin-bottom: 20px;
+					padding: 20px;
+				}
+			}
+
+			#lower {
+				p {
+					width: 90%;
+				}
+				.wrap {
+					> article {
+						width: 100%;
+						padding: 10px;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+}
