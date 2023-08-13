@@ -35,6 +35,7 @@
 				padding: 20px;
 				border: 1px solid #aaa;
 				form {
+					margin: 0px auto;
 					h3 {
 						font: bold 30px/1 'jost';
 						color: #555;
@@ -46,8 +47,8 @@
 						color: #555;
 					}
 					input {
-						width: 200px;
-						height: 20px;
+						width: 100%;
+						height: 30px;
 						display: block;
 						margin-top: 10px;
 						margin-bottom: 20px;
@@ -62,11 +63,16 @@
 							color: #555;
 							border: 1px solid #aaa;
 							cursor: pointer;
+							transition: 0.5s;
+							&:hover {
+								background-color: #333;
+								color: #fff;
+							}
 						}
 					}
 					textarea {
-						width: 300px;
-						height: 80px;
+						width: 100%;
+						height: 90px;
 						margin-top: 10px;
 						display: block;
 						resize: none;
@@ -98,7 +104,7 @@
 						background: #333;
 						text-align: center;
 						&.on {
-							background: #efefef;
+							background: #fafafa;
 							color: #333;
 						}
 					}
