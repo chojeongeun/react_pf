@@ -60,7 +60,9 @@ function Contact() {
 	return (
 		<Layout name={'CONTACT'}>
 			<div id='map' ref={container}></div>
-			<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic ON' : 'Traffic OFF'}</button>
+			<button onClick={() => setTraffic(!Traffic)} className='trafficBtn'>
+				{Traffic ? 'Traffic ON' : 'Traffic OFF'}
+			</button>
 			<div className='txtwrap'>
 				<div id='formBox'>
 					<form ref={form} onSubmit={sendEmail}>
