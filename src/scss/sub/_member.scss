@@ -7,12 +7,48 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			gap: 40px;
+			gap: 80px;
 			margin-bottom: 80px;
 
 			li {
-				font: 16px/1 '맑은고딕';
-				color: #333;
+				text-align: center;
+				.step {
+					font: bold 13px/1 'poppins';
+					color: #bbb;
+					margin-bottom: 10px;
+					letter-spacing: 1px;
+				}
+				.num {
+					font: 20px/1 'poppins';
+					margin-bottom: 10px;
+					color: #bbb;
+				}
+				.fa-user,
+				.fa-pen-to-square,
+				.fa-circle-check {
+					font-size: 30px;
+					color: #bbb;
+					margin-bottom: 15px;
+				}
+				.txt {
+					font: bold 15px/1 '맑은고딕';
+					color: #bbb;
+				}
+
+				&:nth-of-type(2) {
+					p {
+						font-weight: bold;
+						color: #333;
+					}
+					.fa-pen-to-square {
+						color: #25dabb;
+						font-size: 40px;
+					}
+				}
+			}
+			.fa-arrow-right-long {
+				color: #aaa;
+				font-size: 20px;
 			}
 		}
 		form {

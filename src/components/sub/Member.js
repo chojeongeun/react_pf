@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import Layout from '../common/Layout';
 import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCircleCheck, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
 function Member() {
 	const history = useHistory();
@@ -77,9 +80,7 @@ function Member() {
 		if (!value === '') {
 			errs.gender = '성별을 체크해주세요.';
 		}
-		if (!value.interests.length === 0) {
-			errs.interests = '관심사를 하나 이상 체크하세요.';
-		}
+
 		if (value.edu === '') {
 			errs.edu = '최종학력을 선택하세요.';
 		}
@@ -105,9 +106,23 @@ function Member() {
 		<Layout name={'MEMBER'}>
 			<button onClick={() => history.goBack()}>뒤로 가기</button>
 			<ul className='join'>
-				<li>01 약관동의</li>
-				<li>02 정보입력</li>
-				<li>03 가입완료</li>
+				<li>
+					<p className='step'>STEP 1</p>
+					<FontAwesomeIcon icon={faUser} />
+					<p className='txt'>회원가입</p>
+				</li>
+				<FontAwesomeIcon icon={faArrowRightLong} />
+				<li>
+					<p className='step'>STEP 2</p>
+					<FontAwesomeIcon icon={faPenToSquare} />
+					<p className='txt'>정보입력</p>
+				</li>
+				<FontAwesomeIcon icon={faArrowRightLong} />
+				<li>
+					<p className='step'>STEP 3</p>
+					<FontAwesomeIcon icon={faCircleCheck} />
+					<p className='txt'>가입완료</p>
+				</li>
 			</ul>
 			<form onSubmit={handleSubmit}>
 				<fieldset>
@@ -115,9 +130,10 @@ function Member() {
 					<h2>회원약관 동의</h2>
 					<div className='agreement'>
 						<textarea>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi suscipit assumenda consectetur mollitia dolores nisi possimus impedit facilis explicabo vitae quae architecto corrupti
-							deserunt, aperiam, non minima aliquid molestias vel necessitatibus quidem obcaecati. Sapiente accusamus nobis neque accusantium deleniti culpa, molestias possimus ea dicta vitae
-							obcaecati libero nihil cumque modi.
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi suscipit assumenda consectetur mollitia
+							dolores nisi possimus impedit facilis explicabo vitae quae architecto corrupti deserunt, aperiam, non
+							minima aliquid molestias vel necessitatibus quidem obcaecati. Sapiente accusamus nobis neque accusantium
+							deleniti culpa, molestias possimus ea dicta vitae obcaecati libero nihil cumque modi.
 						</textarea>
 						<input type='checkbox' id='terms' name='terms' />
 						<label for='terms'>모든 약관을 확인하고 동의합니다.</label>
@@ -131,7 +147,14 @@ function Member() {
 									<label htmlFor='userid'>USER ID</label>
 								</th>
 								<td>
-									<input type='text' name='userid' id='userid' placeholder='아이디를 입력하세요' onChange={handleChange} value={Val.userid} />
+									<input
+										type='text'
+										name='userid'
+										id='userid'
+										placeholder='아이디를 입력하세요'
+										onChange={handleChange}
+										value={Val.userid}
+									/>
 									<br />
 									{Err.userid && <p>{Err.userid}</p>}
 								</td>
@@ -142,7 +165,14 @@ function Member() {
 									<label htmlFor='pwd1'>PASSWORD</label>
 								</th>
 								<td>
-									<input type='password' name='pwd1' id='pwd1' placeholder='비밀번호를 입력하세요' onChange={handleChange} value={Val.pwd1} />
+									<input
+										type='password'
+										name='pwd1'
+										id='pwd1'
+										placeholder='비밀번호를 입력하세요'
+										onChange={handleChange}
+										value={Val.pwd1}
+									/>
 									<br />
 									{Err.pwd1 && <p>{Err.pwd1}</p>}
 								</td>
@@ -153,7 +183,14 @@ function Member() {
 									<label htmlFor='pwd2'>RE-PASSWORD</label>
 								</th>
 								<td>
-									<input type='password' name='pwd2' id='pwd2' placeholder='비밀번호를 재입력하세요' onChange={handleChange} value={Val.pwd2} />
+									<input
+										type='password'
+										name='pwd2'
+										id='pwd2'
+										placeholder='비밀번호를 재입력하세요'
+										onChange={handleChange}
+										value={Val.pwd2}
+									/>
 									<br />
 									{Err.pwd2 && <p>{Err.pwd2}</p>}
 								</td>
@@ -164,7 +201,14 @@ function Member() {
 									<label htmlFor='email'>E-MAIL</label>
 								</th>
 								<td>
-									<input type='text' name='email' id='email' placeholder='이메일주소를 입력하세요' onChange={handleChange} value={Val.email} />
+									<input
+										type='text'
+										name='email'
+										id='email'
+										placeholder='이메일주소를 입력하세요'
+										onChange={handleChange}
+										value={Val.email}
+									/>
 									<br />
 									{Err.email && <p>{Err.email}</p>}
 								</td>
@@ -181,20 +225,7 @@ function Member() {
 									{Err.gender && <p>{Err.gender}</p>}
 								</td>
 							</tr>
-							{/* interest */}
-							<tr>
-								<th>INTERESTS</th>
-								<td>
-									<label htmlFor='music'>Music</label>
-									<input type='checkbox' name='interests' value='music' id='music' onChange={handleCheck} />
-									<label htmlFor='reading'>Reading</label>
-									<input type='checkbox' name='interests' value='reading' id='reading' onChange={handleCheck} />
-									<label htmlFor='game'>Game</label>
-									<input type='checkbox' name='interests' value='game' id='game' onChange={handleCheck} />
-									<br />
-									{Err.interests && <p>{Err.interests}</p>}
-								</td>
-							</tr>
+
 							{/* education */}
 							<tr>
 								<th>
@@ -217,7 +248,15 @@ function Member() {
 									<label htmlFor='comments'>Leave Message</label>
 								</th>
 								<td>
-									<textarea name='comments' id='comments' cols='30' rows='3' value={Val.comments} onChange={handleChange} placeholder='남기는 말을 입력하세요.'></textarea>
+									<textarea
+										name='comments'
+										id='comments'
+										cols='30'
+										rows='3'
+										value={Val.comments}
+										onChange={handleChange}
+										placeholder='남기는 말을 입력하세요.'
+									></textarea>
 									<br />
 									{Err.comments && <p>{Err.comments}</p>}
 								</td>
