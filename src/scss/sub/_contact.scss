@@ -105,63 +105,20 @@
 					}
 				}
 			}
-			.FAQ {
-				width: 60%;
-				border: 1px solid #aaa;
-
-				.btn {
-					width: 100%;
-					li {
-						float: left;
-						width: calc(100% / 3);
-						height: 50px;
-						display: block;
-						font: bold 14px/50px 'Jost';
-						color: #999;
-						background: #333;
-						text-align: center;
-						&.on {
-							background: #fafafa;
-							color: #333;
-						}
-					}
-				}
-				.box {
-					width: 100%;
-					li {
-						width: 100%;
-						height: 300px;
-
-						display: none;
-						&.on {
-							display: block;
-						}
-						p {
-							width: 100%;
-							font: 18px/1 'jost';
-							color: #555;
-							padding: 30px;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-						}
-					}
-				}
-			}
 		}
+
 		#map {
 			width: 100%;
 			height: 400px;
-			background: #333;
-			margin-top: 70px;
-			filter: grayscale(30%);
+			background: #111;
+			position: relative;
+			filter: grayscale(80%);
 			transition: filter 0.5s;
 
 			&:hover {
 				filter: saturate(100%);
 			}
 		}
-
 		.trafficBtn {
 			margin: 15px;
 			display: block;
@@ -171,6 +128,83 @@
 			color: #666;
 			border: 1px solid #aaa;
 			// background: none;
+		}
+
+		.FAQ {
+			width: 100%;
+			height: 300px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+
+			.faqTit {
+				width: 40%;
+				height: 100%;
+				span {
+					font: bold 12px/1 'jost';
+					color: coral;
+					margin-bottom: 10px;
+				}
+				> p {
+					margin-top: 20px;
+					font-size: 45px;
+					font-family: 'poppins';
+					font-weight: bold;
+					color: #444;
+				}
+			}
+			.faqTxtwrap {
+				width: 60%;
+				border: 1px solid #ccc;
+				.btn {
+					width: 100%;
+					li {
+						float: left;
+						width: calc(100% / 3);
+						height: 60px;
+						display: block;
+						font: bold 18px/60px 'Jost';
+						color: inherit;
+						background: rgb(117, 117, 117);
+						text-align: center;
+						cursor: pointer;
+						&.on {
+							background: inherit;
+							color: #333;
+						}
+					}
+				}
+				.box {
+					width: 100%;
+					li {
+						width: 100%;
+						height: 320px;
+						display: none;
+
+						&.on {
+							display: block;
+						}
+						.question {
+							width: 100%;
+							font: bold 16px/1.3 'jost';
+							color: #555;
+							padding: 15px;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						}
+						.answer {
+							width: 100%;
+							font: 16px/1.4 'jost';
+							color: #555;
+							padding: 15px;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -92,7 +92,6 @@ function Contact() {
 			</div>
 
 			<div id='map' ref={container}></div>
-
 			<button onClick={() => setTraffic(!Traffic)} className='trafficBtn'>
 				{Traffic ? 'Traffic ON' : 'Traffic OFF'}
 			</button>
