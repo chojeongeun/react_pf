@@ -14,17 +14,13 @@
 				margin-bottom: 10px;
 
 				form {
-					// margin: 0px auto;
 					h3 {
 						font: bold 25px/1 'jost';
 						color: #555;
 						text-align: center;
 						margin-bottom: 50px;
 					}
-					// label {
-					// 	font: bold 14px/1 'Jost';
-					// 	color: #555;
-					// }
+
 					input {
 						width: 100%;
 						height: 30px;
@@ -42,7 +38,7 @@
 							display: block;
 							width: 150px;
 							height: 30px;
-							margin: 50px auto;
+							margin: 20px auto;
 							font: bold 14px/30px 'jost';
 							color: #555;
 							border: 1px solid #ccc;
@@ -68,12 +64,13 @@
 						font-weight: bold;
 						letter-spacing: 1px;
 					}
-				}
-				p {
-					display: block;
-					text-align: left;
-					margin-top: 20px;
-					color: #555;
+					.success {
+						font: bold 15px/1 '맑은고딕';
+						display: block;
+						text-align: left;
+						margin-left: 10px;
+						color: rgb(255, 84, 84);
+					}
 				}
 			}
 			.Information {
@@ -127,7 +124,6 @@
 			font: 18px/30px 'arial';
 			color: #666;
 			border: 1px solid #aaa;
-			// background: none;
 		}
 
 		.FAQ {
@@ -212,47 +208,83 @@
 @media screen and (max-width: $tablet) {
 	.CONTACT {
 		> .inner {
+			.txtwrap {
+				#formBox {
+					padding: 20px;
+					height: 350px;
+
+					form {
+						h3 {
+							font: bold 20px/1 'jost';
+						}
+						input {
+							font-size: 11px;
+						}
+						textarea {
+							font-size: 11px;
+						}
+					}
+					.success {
+						font-size: 12px;
+					}
+				}
+
+				.Information {
+					padding: 20px;
+					height: 350px;
+
+					> h2 {
+						font: bold 18px/1.2 'jost';
+						margin-bottom: 20px;
+						text-align: center;
+					}
+
+					> h3 {
+						font: bold 15px/1 'jost';
+					}
+					> p {
+						font: 13px/1 'jost';
+					}
+				}
+			}
+
 			#map {
-				height: 400px;
-				margin-top: 50px;
+				// margin-top: 50px;
 			}
 
 			button {
 				font: 15px/30px 'arial';
 			}
 
-			.txtwrap {
-				#formBox {
-					form {
-						h3 {
-							font: bold 25px/1 'jost';
-						}
-						label {
-							font: bold 12px/1 'Jost';
-						}
-						input {
-							height: 25px;
-						}
-						textarea {
-							width: 100%;
-							height: 65px;
-						}
-					}
+			.FAQ {
+				height: 300px;
+
+				.faqTit {
 					> p {
-						font-size: 12px;
+						font-size: 30px;
 					}
 				}
-				.FAQ {
+				.faqTxtwrap {
 					.btn {
 						li {
-							font: bold 13px/50px 'Jost';
+							height: 40px;
+							font: bold 15px/40px 'Jost';
 						}
 					}
 					.box {
 						li {
-							> p {
-								font: 15px/1.3 'jost';
-								padding: 30px;
+							width: 100%;
+							height: 320px;
+							display: none;
+
+							&.on {
+								display: block;
+							}
+							.question {
+								font: bold 14px/1.2 'jost';
+							}
+							.answer {
+								font: 14px/1.3 'jost';
 							}
 						}
 					}
@@ -270,37 +302,55 @@
 				#formBox {
 					width: 100%;
 					margin-bottom: 20px;
-					form {
-						h3 {
-							margin-bottom: 10px;
-						}
-						input {
-							margin-top: 5px;
-							margin-bottom: 10px;
-						}
-						textarea {
-							width: 100%;
-							height: 65px;
-							margin-bottom: 10px;
-						}
+				}
+				.Information {
+					width: 100%;
+					padding: 20px;
+					height: 350px;
+
+					> h2 {
+						font: bold 20px/1.2 'jost';
+					}
+
+					> h3 {
+						font: bold 15px/1 'jost';
 					}
 					> p {
-						font-size: 12px;
+						font: 13px/1 'jost';
 					}
 				}
-				.FAQ {
+			}
+			.FAQ {
+				height: 300px;
+
+				.faqTit {
+					display: none;
+					> p {
+						font-size: 30px;
+					}
+				}
+				.faqTxtwrap {
 					width: 100%;
-					height: 400px;
 					.btn {
 						li {
-							font: bold 13px/50px 'Jost';
+							height: 40px;
+							font: bold 15px/40px 'Jost';
 						}
 					}
 					.box {
 						li {
-							> p {
-								font: 15px/1.3 'jost';
-								padding: 30px;
+							width: 100%;
+							height: 320px;
+							display: none;
+
+							&.on {
+								display: block;
+							}
+							.question {
+								font: bold 14px/1.2 'jost';
+							}
+							.answer {
+								font: 14px/1.3 'jost';
 							}
 						}
 					}

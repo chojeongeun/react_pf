@@ -71,9 +71,9 @@ function Contact() {
 						<input type='email' name='user_email' ref={inputEmail} placeholder='EMAIL' />
 						{/* <label>Message</label> */}
 						<textarea name='message' ref={inputMsg} placeholder='MESSAGE' />
+						{Success && <p className='success'>메일이 성공적으로 발송되었습니다.</p>}
 						<input type='submit' value='Send' />
 					</form>
-					{Success && <p>메일이 성공적으로 발송되었습니다.</p>}
 				</div>
 
 				<article className='Information'>
