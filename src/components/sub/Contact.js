@@ -1,7 +1,10 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
-//import Faq from '../../components/common/Faq';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Contact() {
 	const container = useRef(null);
@@ -84,9 +87,9 @@ function Contact() {
 					<p>031 345 6789</p>
 					<h3>Follow</h3>
 					<p>
-						<i className='fab fa-twitter'></i>
-						<i className='fab fa-facebook'></i>
-						<i className='fab fa-instagram'></i>
+						<FontAwesomeIcon icon={faPhone} />
+						<FontAwesomeIcon icon={faEnvelope} />
+						<FontAwesomeIcon icon={faUser} />
 					</p>
 				</article>
 			</div>
