@@ -165,7 +165,8 @@
 	.MEMBER {
 		.inner {
 			.join {
-				display: none;
+				gap: 50px;
+				margin-bottom: 60px;
 			}
 			form {
 				.agreement {
@@ -212,6 +213,9 @@
 @media screen and (max-width: $mobile) {
 	.MEMBER {
 		.inner {
+			.join {
+				display: none;
+			}
 			form {
 				.agreement {
 					margin-bottom: 30px;
