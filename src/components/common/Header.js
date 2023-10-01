@@ -64,6 +64,7 @@ function Header({ type, menu }) {
 							</NavLink>
 						</li>
 					</ul>
+
 					<FontAwesomeIcon
 						icon={faBars}
 						className='btnCall'
