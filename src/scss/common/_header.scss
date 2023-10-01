@@ -22,6 +22,9 @@ header {
 				li {
 					a {
 						color: #fff;
+						&:hover {
+							color: #fa4444;
+						}
 					}
 				}
 			}
@@ -60,7 +63,7 @@ header {
 		#gnb1 {
 			position: absolute;
 			top: 20px;
-			left: 150px;
+			left: 100px;
 
 			li {
 				float: left;
@@ -69,6 +72,10 @@ header {
 					padding: 20px;
 					font: bold 14px/1 'Poppins', sans-serif;
 					color: #333;
+
+					&:hover {
+						color: #fa4444;
+					}
 				}
 			}
 		}
@@ -85,6 +92,10 @@ header {
 					padding: 20px;
 					font: bold 14px/1 'Poppins', sans-serif;
 					color: #333;
+
+					&:hover {
+						color: #fa4444;
+					}
 				}
 			}
 		}
