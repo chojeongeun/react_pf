@@ -54,17 +54,19 @@ header {
 				display: block;
 				font: bold 28px/1 'Jost', sans-serif;
 				color: #333;
+				text-align: center;
 			}
 		}
 		#gnb1 {
 			position: absolute;
-			top: 30px;
-			left: 200px;
+			top: 20px;
+			left: 150px;
 
 			li {
 				float: left;
-				margin-right: 30px;
 				a {
+					display: inline-block;
+					padding: 20px;
 					font: bold 14px/1 'Poppins', sans-serif;
 					color: #333;
 				}
@@ -73,13 +75,14 @@ header {
 
 		#gnb2 {
 			position: absolute;
-			top: 30px;
-			right: 200px;
+			top: 20px;
+			right: 150px;
 
 			li {
 				float: left;
-				margin-right: 30px;
 				a {
+					display: inline-block;
+					padding: 20px;
 					font: bold 14px/1 'Poppins', sans-serif;
 					color: #333;
 				}
@@ -88,12 +91,13 @@ header {
 
 		#util {
 			position: absolute;
-			top: 30px;
+			top: 20px;
 			right: 10px;
 			li {
 				float: left;
-				margin-right: 30px;
 				a {
+					display: inline-block;
+					padding: 20px 10px;
 					font: 14px/1 'Poppins', sans-serif;
 					color: #333;
 				}
