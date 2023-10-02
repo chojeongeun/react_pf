@@ -6,9 +6,10 @@
 		align-content: center;
 		article {
 			width: calc(100% / 3 - 40px);
-			border: 1.5px solid #ddd;
+			border: 1.5px solid #ccc;
 			background: #fff;
 			margin-bottom: 80px;
+			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
 			.pic {
 				width: 100%;
