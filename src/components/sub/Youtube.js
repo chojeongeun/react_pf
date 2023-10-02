@@ -11,7 +11,7 @@ function Youtube() {
 	const fetchYoutube = async () => {
 		const key = 'AIzaSyAzkLv4Fcv1UNbOrmEVhonD6YXHhLjwsC8';
 		const list = 'PLWvS8-RhJ_PKwK6LI-fBPArE2muxoT1Qc';
-		const num = 10;
+		const num = 9;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${list}&key=${key}&maxResults=${num}`;
 		const result = await axios.get(url);
 		setVids(result.data.items);
@@ -37,7 +37,7 @@ function Youtube() {
 							<div className='boxTxt'>
 								<h2>{vid.snippet.title.length > 50 ? vid.snippet.title.substr(0, 50) + '...' : vid.snippet.title}</h2>
 
-								<p>{vid.snippet.description.length > 200 ? vid.snippet.description.substr(0, 200) + '...' : vid.snippet.description}</p>
+								<p>{vid.snippet.description.length > 70 ? vid.snippet.description.substr(0, 70) + '...' : vid.snippet.description}</p>
 								<span>{vid.snippet.publishedAt.split('T')[0].split('-').join('.')}</span>
 							</div>
 						</article>
