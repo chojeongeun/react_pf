@@ -1,21 +1,21 @@
 .YOUTUBE {
 	> .inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
 		article {
-			width: 100%;
-			padding: 20px 20px;
+			width: calc(100% / 3 - 40px);
 			border: 1.5px solid #ddd;
-			background: #efefef;
-			margin-top: 70px;
-			margin-bottom: 30px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			background: #fff;
+			margin-bottom: 80px;
 
 			.pic {
-				width: calc((100% / 2) - 40px);
-				height: 280px;
+				width: 100%;
+				height: 200px;
 				margin: 0px auto;
-				margin-bottom: 30px;
+				margin-bottom: 10px;
+
 				:hover {
 					box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
 					transition: 0.3s;
@@ -27,22 +27,25 @@
 				}
 			}
 			.boxTxt {
-				width: 50%;
+				padding: 10px;
+				width: 100%;
+				margin: 0px auto;
 				h2 {
-					font: bold 25px/1.2 'Poppins', sans-serif;
-					color: #222;
+					font: bold 16px/1.1 'poppins', sans-serif;
+					color: #555;
 					border-bottom: 1px solid #555;
-					padding-bottom: 20px;
+					padding-bottom: 10px;
 				}
 				p {
-					padding-top: 20px;
-					font: 15px/1.3 'Poppins', sans-serif;
-					color: #666;
-					margin-bottom: 40px;
+					padding-top: 10px;
+					font: 12px/1.3 'poppins';
+					color: #777;
+					margin-bottom: 10px;
+					text-align: left;
 				}
 				span {
-					font: 12px/1 'Poppins', sans-serif;
-					color: #666;
+					font: 11px/1 'poppins';
+					color: #777;
 				}
 			}
 		}
