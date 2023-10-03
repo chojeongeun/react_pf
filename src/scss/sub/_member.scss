@@ -139,6 +139,9 @@
 						&:hover {
 							background: rgba(0, 0, 0, 0.09);
 						}
+						&:focus {
+							outline: 1px solid #555;
+						}
 					}
 					input[type='checkbox'],
 					input[type='radio'] {
