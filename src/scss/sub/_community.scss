@@ -16,6 +16,10 @@
 				margin-bottom: 10px;
 				background: #fff;
 				font-family: '돋움';
+
+				&:focus {
+					outline: 1px solid #555;
+				}
 			}
 
 			.btnSet {
