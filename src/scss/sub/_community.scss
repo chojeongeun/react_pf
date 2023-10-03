@@ -32,6 +32,12 @@
 					margin-right: 20px;
 					color: #fff;
 					cursor: pointer;
+
+					&:hover {
+						color: #fff;
+						background: #2b55c9bd;
+						transition: 0.5s;
+					}
 				}
 			}
 		}
