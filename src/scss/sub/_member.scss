@@ -109,17 +109,20 @@
 					background: #fafafa;
 
 					&:last-child {
+						border-top: 1px solid #bbb;
+						border-bottom: 1px solid #333;
+						background: inherit;
 						text-align: center;
 						input[type='submit'],
 						input[type='reset'] {
 							width: 180px;
-							height: 30px;
+							height: 40px;
 							display: inline-flex;
 							justify-content: center;
 							align-items: center;
 							border: 1px solid #333;
 							margin: 0px 10px;
-							font: bold 14px/30px 'Poppins', sans-serif;
+							font: bold 14px/40px 'Poppins', sans-serif;
 							color: #555;
 							cursor: pointer;
 							transition: 0.5s;
