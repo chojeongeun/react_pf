@@ -130,10 +130,9 @@ function Member() {
 					<h2>회원약관 동의</h2>
 					<div className='agreement'>
 						<textarea>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi suscipit assumenda consectetur mollitia
-							dolores nisi possimus impedit facilis explicabo vitae quae architecto corrupti deserunt, aperiam, non
-							minima aliquid molestias vel necessitatibus quidem obcaecati. Sapiente accusamus nobis neque accusantium
-							deleniti culpa, molestias possimus ea dicta vitae obcaecati libero nihil cumque modi.
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi suscipit assumenda consectetur mollitia dolores nisi possimus impedit facilis explicabo vitae quae architecto corrupti
+							deserunt, aperiam, non minima aliquid molestias vel necessitatibus quidem obcaecati. Sapiente accusamus nobis neque accusantium deleniti culpa, molestias possimus ea dicta vitae
+							obcaecati libero nihil cumque modi.
 						</textarea>
 						<input type='checkbox' id='terms' name='terms' />
 						<label for='terms'>모든 약관을 확인하고 동의합니다.</label>
@@ -144,17 +143,10 @@ function Member() {
 							{/* user id */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='userid'>USER ID</label>
+									<label htmlFor='userid'>아이디</label>
 								</th>
 								<td>
-									<input
-										type='text'
-										name='userid'
-										id='userid'
-										placeholder='아이디를 입력하세요'
-										onChange={handleChange}
-										value={Val.userid}
-									/>
+									<input type='text' name='userid' id='userid' placeholder='아이디를 입력하세요' onChange={handleChange} value={Val.userid} />
 									<br />
 									{Err.userid && <p>{Err.userid}</p>}
 								</td>
@@ -162,17 +154,10 @@ function Member() {
 							{/* password */}
 							<tr>
 								<th>
-									<label htmlFor='pwd1'>PASSWORD</label>
+									<label htmlFor='pwd1'>비밀번호</label>
 								</th>
 								<td>
-									<input
-										type='password'
-										name='pwd1'
-										id='pwd1'
-										placeholder='비밀번호를 입력하세요'
-										onChange={handleChange}
-										value={Val.pwd1}
-									/>
+									<input type='password' name='pwd1' id='pwd1' placeholder='비밀번호를 입력하세요' onChange={handleChange} value={Val.pwd1} />
 									<br />
 									{Err.pwd1 && <p>{Err.pwd1}</p>}
 								</td>
@@ -180,17 +165,10 @@ function Member() {
 							{/* re password */}
 							<tr>
 								<th>
-									<label htmlFor='pwd2'>RE-PASSWORD</label>
+									<label htmlFor='pwd2'>비밀번호 확인</label>
 								</th>
 								<td>
-									<input
-										type='password'
-										name='pwd2'
-										id='pwd2'
-										placeholder='비밀번호를 재입력하세요'
-										onChange={handleChange}
-										value={Val.pwd2}
-									/>
+									<input type='password' name='pwd2' id='pwd2' placeholder='비밀번호를 재입력하세요' onChange={handleChange} value={Val.pwd2} />
 									<br />
 									{Err.pwd2 && <p>{Err.pwd2}</p>}
 								</td>
@@ -198,28 +176,21 @@ function Member() {
 							{/* e mail */}
 							<tr>
 								<th>
-									<label htmlFor='email'>E-MAIL</label>
+									<label htmlFor='email'>이메일</label>
 								</th>
 								<td>
-									<input
-										type='text'
-										name='email'
-										id='email'
-										placeholder='이메일주소를 입력하세요'
-										onChange={handleChange}
-										value={Val.email}
-									/>
+									<input type='text' name='email' id='email' placeholder='이메일주소를 입력하세요' onChange={handleChange} value={Val.email} />
 									<br />
 									{Err.email && <p>{Err.email}</p>}
 								</td>
 							</tr>
 							{/* gender */}
 							<tr>
-								<th>GENDER</th>
+								<th>성별</th>
 								<td>
-									<label htmlFor='male'>Male</label>
+									<label htmlFor='male'>남자</label>
 									<input type='radio' name='gender' value='male' id='mail' onChange={handleRadio} />
-									<label htmlFor='female'>FeMale</label>
+									<label htmlFor='female'>여자</label>
 									<input type='radio' name='gender' value='female' id='female' onChange={handleRadio} />
 									<br />
 									{Err.gender && <p>{Err.gender}</p>}
@@ -229,7 +200,7 @@ function Member() {
 							{/* education */}
 							<tr>
 								<th>
-									<label htmlFor='edu'>EDUCATION</label>
+									<label htmlFor='edu'>최종학력</label>
 								</th>
 								<td>
 									<select name='edu' id='edu' onChange={handleSelect}>
@@ -245,18 +216,10 @@ function Member() {
 							{/* comments */}
 							<tr>
 								<th>
-									<label htmlFor='comments'>Leave Message</label>
+									<label htmlFor='comments'>남기는 말</label>
 								</th>
 								<td>
-									<textarea
-										name='comments'
-										id='comments'
-										cols='30'
-										rows='3'
-										value={Val.comments}
-										onChange={handleChange}
-										placeholder='남기는 말을 입력하세요.'
-									></textarea>
+									<textarea name='comments' id='comments' cols='30' rows='3' value={Val.comments} onChange={handleChange} placeholder='남기는 말을 입력하세요.'></textarea>
 									<br />
 									{Err.comments && <p>{Err.comments}</p>}
 								</td>
