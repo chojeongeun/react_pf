@@ -95,6 +95,7 @@
 				th,
 				td {
 					border: 1px solid #bbb;
+					border-top: 1px solid #333;
 					border-left: none;
 					border-right: none;
 					padding: 20px 35px;
@@ -109,7 +110,6 @@
 					background: #fafafa;
 
 					&:last-child {
-						border-top: 1px solid #bbb;
 						border-bottom: 1px solid #333;
 						background: inherit;
 						text-align: center;
@@ -208,6 +208,12 @@
 					}
 				}
 				table {
+					border-top: 1px solid #333;
+
+					th,
+					td {
+						border: none;
+					}
 					th {
 						display: none;
 						&:last-child {
@@ -225,6 +231,7 @@
 					}
 					td {
 						width: 100%;
+						border-left: none;
 
 						#userid,
 						#pwd1,
@@ -270,7 +277,8 @@
 
 							input[type='reset'],
 							input[type='submit'] {
-								font-size: 12px;
+								height: 30px;
+								font: bold 12px/30px 'Poppins', sans-serif;
 							}
 						}
 					}
