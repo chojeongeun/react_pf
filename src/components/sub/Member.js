@@ -104,7 +104,7 @@ function Member() {
 
 	return (
 		<Layout name={'MEMBER'}>
-			<button onClick={() => history.goBack()}>뒤로 가기</button>
+			<button onClick={() => history.goBack()}>back</button>
 			<ul className='join'>
 				<li>
 					<p className='step'>STEP 1</p>
