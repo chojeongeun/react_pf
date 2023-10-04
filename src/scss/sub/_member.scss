@@ -136,6 +136,11 @@
 				td {
 					border-left: 1px solid #bbb;
 
+					label {
+						font: bold 12px/1 '맑은 고딕';
+						padding-right: 6px;
+					}
+
 					input[type='text'],
 					input[type='password'],
 					input[type='email'],
